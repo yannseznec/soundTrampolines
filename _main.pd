@@ -1,0 +1,54 @@
+#N canvas 129 140 1033 738 10;
+#X msg 42 130 \; pd dsp 1;
+#X msg 239 476 all \$1;
+#X msg 165 263 1;
+#X obj 165 285 + 1;
+#X floatatom 165 307 5 0 0 0 - - -;
+#X floatatom 168 367 5 0 0 0 - - -;
+#X obj 165 107 notein;
+#X obj 166 141 pack 0 0;
+#X obj 166 208 sel 100;
+#X obj 167 185 change;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array sequencer1 16 float 3;
+#A 0 16.3286 15.4286 5.27143 9.64286 15.1714 16.3286 11.8286 14.4 14.2714
+14.1429 12.4714 16.4571 6.29999 12.4714 5.91429 16.4571;
+#X coords 0 18 16 0 200 140 1 0 0;
+#X restore 316 156 graph;
+#X obj 240 393 tabread sequencer1;
+#X floatatom 240 414 5 0 0 0 - - -;
+#X obj 239 450 i;
+#X floatatom 212 302 5 0 0 0 - - -;
+#X obj 116 398 s currentlocation;
+#X obj 319 303 hsl 195 15 0 16 0 0 empty currentlocation empty -2 -8
+0 10 -262144 -1 -1 8487 1;
+#X obj 239 498 clone sound_player 18;
+#X obj 166 163 route 60;
+#X obj 165 239 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 188 239 click to test;
+#X obj 168 345 % 16;
+#X obj 40 100 loadbang;
+#X text 36 31 Trampoline Trigger Patch (remember to set MIDI preferences)
+;
+#X text 528 218 use this to adjust the sequence;
+#X connect 1 0 17 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 3 1;
+#X connect 4 0 21 0;
+#X connect 5 0 11 0;
+#X connect 5 0 15 0;
+#X connect 6 0 7 0;
+#X connect 6 1 7 1;
+#X connect 7 0 18 0;
+#X connect 8 0 19 0;
+#X connect 9 0 8 0;
+#X connect 11 0 12 0;
+#X connect 12 0 13 0;
+#X connect 13 0 1 0;
+#X connect 14 0 21 1;
+#X connect 18 0 9 0;
+#X connect 19 0 2 0;
+#X connect 21 0 5 0;
+#X connect 22 0 0 0;
